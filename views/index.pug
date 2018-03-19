@@ -2,16 +2,22 @@ extends layout
 
 block additionalHead
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="javascripts/landing/index.js")
 
 block content
     .hero
         .bam
             .line
-            h2.big-message Let's Go Places™️
+            h2.big-message Let's Go Places&#8482;
             .line
         h5.subheader Reviews by hoomans, for hoomans.
         p.blurb OpenReviews is a revolutionary review website that says goodbye to the old subjective 5-star rating system and says hello to the AI-assisted-truly-awesome system made for hoomans and hoomans alone.
         a.signup-btn(href="/accounts/register") I'm a hooman and I'm intrigued.
+        #scroll-down-yo
+            .wheel
+            .arrow
+            .arrow.two
+            
     .how-it-works.container
         h5.question How it work tho?
         .steps
