@@ -8,6 +8,10 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
+div {
+    box-sizing: border-box;
+}
+
 .container {
     width: 100%;
     max-width: 1024px;
@@ -114,6 +118,7 @@ body {
     box-shadow: 0 0 20px 0 rgba(235, 107, 86, 0);
     cursor: pointer;
     animation: collapseBounce 0.3s forwards;
+    outline: none;
 }
 
 .search-box input[type="text"]:focus {

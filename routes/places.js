@@ -7,7 +7,7 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.get('/search/:q', (req, res, next) => {
-    res.render('places/search', {title: 'Search'})
+    res.render('places/search', {title: 'Search', q: req.params.q})
 })
 
 module.exports = router
