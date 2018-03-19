@@ -7,13 +7,16 @@
 }
 
 .search-results .place {
+    position: relative;
     width: 100%;
-    height: 200px;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
     padding: 20px;
     margin: 40px 0;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+    color: var(--primary-text-color);
 }
 
 .search-results .place:first-child {
@@ -73,4 +76,13 @@
 
 .search-results .place .info .name-and-address .website a:hover {
     text-decoration: underline;
+}
+
+.search-results .place .review {
+    margin-top: 20px;
+}
+
+.search-results .place .review {
+    font-weight: 300;
+    font-style: italic;
 }

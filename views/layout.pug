@@ -12,7 +12,7 @@ html
 
         block additionalHead
     body
-        nav.navbar
+        nav#navbar.transparent
             .container
                 .logo-container
                     a.logo(href='/') 
@@ -26,8 +26,8 @@ html
                                 i.fas.fa-search
                             input(type='submit', name='', value='')
                 .account
-                    a.nav(href="/accounts/login") Sign In
+                    a.nav(href="/accounts/login") Sign in
                     h5 or
-                    a.nav(href="/accounts/register") Sign Up
+                    a.nav(href="/accounts/register") Sign up
         section.main
             block content
