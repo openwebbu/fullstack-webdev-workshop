@@ -1,0 +1,33 @@
+html
+    head
+        title=title
+        //- Import fonts from Google Fonts
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lobster')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Rubik:300,400,700')
+        link(rel='stylesheet', href='/stylesheets/layout/reset.css')
+        link(rel='stylesheet', href='/stylesheets/layout/style.css')
+
+        //- Import Font Awesome
+        script(defer, src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
+
+        block additionalHead
+    body
+        nav.navbar
+            .container
+                .logo-container
+                    a.logo(href='/') 
+                        span.highlight Open
+                        | Reviews
+                .menu
+                    .search-box
+                        input(type='text', name='q', placeholder='Find places...')
+                        .wrapper
+                            div.search-icon
+                                i.fas.fa-search
+                            input(type='submit', name='', value='')
+                .account
+                    a.nav(href="/accounts/login") Sign In
+                    h5 or
+                    a.nav(href="/accounts/register") Sign Up
+        section.main
+            block content

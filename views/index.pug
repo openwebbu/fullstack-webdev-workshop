@@ -1,0 +1,36 @@
+extends layout
+
+block additionalHead
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+block content
+    .hero
+        .bam
+            .line
+            h2.big-message Let's Go Places™️
+            .line
+        h5.subheader Reviews by hoomans, for hoomans.
+        p.blurb OpenReviews is a revolutionary review website that says goodbye to the old subjective 5-star rating system and says hello to the AI-assisted-truly-awesome system made for hoomans and hoomans alone.
+        a.signup-btn(href="/accounts/register") I'm a hooman and I'm intrigued.
+    .how-it-works.container
+        h5.question How it work tho?
+        .steps
+            .step
+                .number 1
+                .icon
+                    i.fas.fa-comment-alt
+                .text
+                    p You go visit somewhere. You form some opinion about the place and you leave a review.
+            .step
+                .number 2
+                .icon
+                    i.fas.fa-cubes
+                .text
+                    p A robot living in our server reads it and sees if you were upset or happy about the place.
+                    p.disclaimer **No robots are harmed during this process.
+            .step
+                .number 3
+                .icon
+                    i.fas.fa-chart-line
+                .text
+                    p It assigns a score to the place and other hoomans benefit from your review!
