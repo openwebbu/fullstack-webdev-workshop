@@ -2,7 +2,8 @@
     --primary-text-color-u: rgb(150, 150, 150);
     --primary-text-color: rgb(75, 75, 75);
     --primary-color: rgb(87, 151, 233);
-    --transition: ease-in-out;
+    --transition: cubic-bezier(0.95,-0.3,0,1.2);
+    --transition-length: 0.7s;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 body .box {
     width: 600px;
     background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+    box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
     padding: 20px;
     color: var(--primary-text-color);
     border-radius: 4px;
@@ -37,7 +38,7 @@ body .box #im-so-tilted {
     right: -50px;
     top: -70px;
     box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3) inset;
-    transition: all 0.3s var(--transition);
+    transition: all var(--transition-length) var(--transition);
     z-index: 2;
 }
 
@@ -50,7 +51,7 @@ body .box #im-so-tilted.signin {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    transition: transform 0.3s var(--transition);
+    transition: transform var(--transition-length) var(--transition);
 }
 
 .box #logo-container.signin {
@@ -70,7 +71,7 @@ body .box #im-so-tilted.signin {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    transition: transform 0.3s var(--transition);
+    transition: transform var(--transition-length) var(--transition);
 }
 
 .box #action-choices.signin {
@@ -101,7 +102,7 @@ body .box #im-so-tilted.signin {
 .box #fields {
     width: 100%;
     margin-bottom: 20px;
-    transition: transform 0.3s var(--transition);
+    transition: transform var(--transition-length) var(--transition);
 }
 
 .box #fields.signin {
@@ -127,7 +128,7 @@ body .box #im-so-tilted.signin {
 
 .box #fields .field .text-field:focus {
     outline: none;
-    border-bottom: solid 10px var(--primary-text-color);
+    border-bottom: solid 8px var(--primary-text-color);
 }
 
 .box #fields .field .text-field:focus + .field-icon {
@@ -165,19 +166,15 @@ body .box #im-so-tilted.signin {
     font-weight: 300;
     box-shadow: 0px 2px 10px 0 rgba(52, 148, 230, 0.6);
     width: 173px;
-    transition: width 0.3s var(--transition);
+    transition: width var(--transition-length) var(--transition);
     overflow: hidden;
     height: 39px;
 }
 
-.box #submit #submit-btn.signin {
-    width: 90px;
-}
-
 .box #submit {
-    transition: transform 0.3s var(--transition);
+    transition: transform var(--transition-length) var(--transition);
 }
 
 .box #submit.signin {
-    transform: translateX(510px);
+    transform: translateX(427px);
 }
