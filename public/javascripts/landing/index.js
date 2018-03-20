@@ -1,4 +1,4 @@
-window.onload = () => {
+const connectScrollAnimations = () => {
     const navbar = document.getElementById('navbar')
     const mouse = document.getElementById('scroll-down-yo')
     const navbarBreakPoint = 150
@@ -29,3 +29,5 @@ window.onload = () => {
 
     window.addEventListener('scroll', onScroll)
 }
+
+app.onLoad(connectScrollAnimations)

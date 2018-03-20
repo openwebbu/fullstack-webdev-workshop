@@ -10,6 +10,9 @@ html
         //- Import Font Awesome
         script(defer, src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
 
+        script(src='/javascripts/app.js')
+        script(src='/javascripts/layout/search.js')
+
         block additionalHead
     body
         nav#navbar.transparent
@@ -20,11 +23,11 @@ html
                         | Reviews
                 .menu
                     .search-box
-                        input(type='text', name='q', placeholder='Find places...')
+                        input#search-place-q(type='text', name='q', placeholder='Find places...')
                         .wrapper
                             div.search-icon
                                 i.fas.fa-search
-                            input(type='submit', name='', value='')
+                            input#search-place-submit(type='submit', name='', value='')
                 .account
                     a.nav(href="/accounts/login") Sign in
                     h5 or
