@@ -7,6 +7,7 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const MongoStore = require('connect-mongo')(session);
 
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -33,8 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true }
+    saveUninitialized: false,
+    cookie: { secure: true },
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
 app.use('/', index)

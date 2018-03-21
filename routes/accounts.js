@@ -70,6 +70,8 @@ router.post('/login', (req, res, next) => {
                 })
             }
             if (isMatch) {
+                req.session.user = user.id
+                console.log(req.session)
                 return res.status(200).json({
                     success: true,
                 })

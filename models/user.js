@@ -42,12 +42,6 @@ User.pre('save', function(next) {
     })
 })
 
-// User.methods.comparePassword = (candidatePassword, cb) => {
-//     bcrypt.compare(candidatePassword, this.password)
-//           .then(isMatch => cb(null, isMatch))
-//           .catch(err => cb(err))
-// }
-
 User.methods.comparePassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
         if (err) return cb(err)
