@@ -18,7 +18,8 @@
     "mongoose": "^5.0.9",
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "slugify": "^1.2.9"
   },
   "devDependencies": {
     "nodemon": "^1.17.1"
