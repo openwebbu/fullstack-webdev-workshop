@@ -5,12 +5,18 @@ const ObjectId = Schema.Types.ObjectId
 const Place = new Schema({
     name: {
         type: String,
-        index: true,
-        unique: true,
         required: true,
+    },
+    slug: {
+        type: String,
+        index: true,
+        require: true,
+        unique: true,
     },
     description: String,
     address: String,
+    phone: String,
+    website: String,
     created: {
         type: Date,
         default: Date.now,
