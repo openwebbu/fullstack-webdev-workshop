@@ -23,7 +23,7 @@
 .wrapper .profile-container .profile .image {
     width: 100%;
     height: 200px;
-    background: linear-gradient(to left, #005aa7, #fffde4);
+    background-color: rgba(0, 0, 0, 0.5);
     position: relative;
 }
 

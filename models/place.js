@@ -1,6 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const slugify = require('slugify')
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId
+const gradients = require('./gradients')
 
 const Place = new Schema({
     name: {
@@ -21,12 +23,42 @@ const Place = new Schema({
         type: Date,
         default: Date.now,
     },
+    colors: [String],
     reviews: [
         {
             type: ObjectId,
             ref: 'Review'
         }
     ]
+})
+
+Place.methods.gradient = function() {
+    return `linear-gradient(to left, ${this.colors.toString()})`
+}
+
+Place.pre('save', function(next) {
+    const place = this
+
+    if (place.isNew) {
+        const max = gradients.length
+        const randomIndex = Math.floor(Math.random() * Math.floor(max))
+        place.colors = gradients[randomIndex].colors
+    }
+
+    if (!place.isModified('name')) return next()
+
+    const potentialSlug = slugify(place.name, { 
+        lower: true,
+        remove: /[$*_+~.()'"!\-:@]/g,
+    })
+
+    place.constructor.count({ name: place.name }, function(err, count) {
+        if (err) return next(err)
+
+        if (count === 0) place.slug = potentialSlug
+        else place.slug = `${potentialSlug}-${count + 1}`
+        return next()
+    })
 })
 
 module.exports = mongoose.model('Place', Place)
