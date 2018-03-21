@@ -7,24 +7,27 @@ block content
     .wrapper
         .profile-container
             .profile
-                .image
+                .image(style='background: ' + place.gradient())
                     .share-btn
                         .share-icon
                             i.fas.fa-share-alt
                 .info
-                    h5.name Hello World Inn.
+                    h5.name #{place.name}
                     .field
                         .field-icon
                             i.fas.fa-map-marker
-                        p 1234 Hello World Ave, Example, MA, 02215
+                        p #{place.address || 'No address :('}
                     .field
                         .field-icon
                             i.fas.fa-phone
-                        p 999-999-9999
+                        p #{place.phone || 'No phone number :('}
                     .field
                         .field-icon
                             i.fas.fa-share-square
-                        a(href="http://www.hello.world") www.hello.world
+                        if place.website
+                            a(href=place.website) #{place.website}
+                        else
+                            p #{place.poo || 'No website :('}
         .reviews-container
             .review
                 .info
