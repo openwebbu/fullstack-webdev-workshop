@@ -10,9 +10,6 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session);
 
 const index = require('./routes/index')
-const users = require('./routes/users')
-const places = require('./routes/places')
-const accounts = require('./routes/accounts')
 
 const app = express()
 
@@ -40,9 +37,6 @@ app.use(session({
 }))
 
 app.use('/', index)
-app.use('/users', users)
-app.use('/places', places)
-app.use('/accounts', accounts)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
