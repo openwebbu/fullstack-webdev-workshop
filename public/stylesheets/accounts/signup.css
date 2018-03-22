@@ -99,21 +99,37 @@ body #box.signin #im-so-tilted {
     font-weight: 300;
 }
 
-#box #fields {
-    width: 100%;
+#box #window #fields {
     margin-bottom: 20px;
+    transition: transform var(--transition-length) var(--transition);
+    display: flex;
+}
+
+#box.signin #window #fields {
+    transform: translateX(-230px);
+}
+
+#box #window #fields .signin-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#box #window {
+    width: 230px;
+    overflow: hidden;
     transition: transform var(--transition-length) var(--transition);
 }
 
-#box.signin #fields {
-    transform: translateX(370px);
+#box.signin #window {
+    transform: translateX(365px);
 }
 
-#box #fields .field {
+#box #window #fields .field {
     position: relative;
 }
 
-#box #fields .field .text-field {
+#box #window #fields .field .text-field {
     width: 230px;
     font-size: 16px;
     padding: 10px 10px 8px 35px;
@@ -126,28 +142,28 @@ body #box.signin #im-so-tilted {
     font-weight: 300;
 }
 
-#box #fields .field .text-field:focus {
+#box #window #fields .field .text-field:focus {
     outline: none;
     border-bottom: solid 8px var(--primary-text-color);
 }
 
-#box #fields .field .text-field:focus + .field-icon {
+#box #window #fields .field .text-field:focus + .field-icon {
     color: var(--primary-text-color);
 }
 
-#box #fields .field .text-field::placeholder {
+#box #window #fields .field .text-field::placeholder {
     color: var(--primary-text-color-u);
 }
 
-#box #fields .field .text-field:not(:placeholder-shown) {
+#box #window #fields .field .text-field:not(:placeholder-shown) {
     border-bottom: solid 2px var(--primary-text-color);
 }
 
-#box #fields .field .text-field:not(:placeholder-shown) + .field-icon {
+#box #window #fields .field .text-field:not(:placeholder-shown) + .field-icon {
     color: var(--primary-text-color);
 }
 
-#box #fields .field .field-icon {
+#box #window #fields .field .field-icon {
     position: absolute;
     left: 5px;
     top: 10px;
@@ -166,7 +182,7 @@ body #box.signin #im-so-tilted {
     font-weight: 300;
     box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.5);
     width: 173px;
-    transition: all var(--transition-length) var(--transition);
+    transition: all 0.3s ease-in-out;
     overflow: hidden;
     height: 39px;
     cursor: pointer;
@@ -174,6 +190,10 @@ body #box.signin #im-so-tilted {
 
 #box #submit #submit-btn:focus {
     outline: none;
+}
+
+#box #submit #submit-btn:hover {
+    transform: scale(1.05);
 }
 
 #box #submit {
