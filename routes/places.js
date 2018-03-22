@@ -18,7 +18,22 @@ router.get('/:slug', function(req, res, next) {
 })
 
 router.get('/search/:q', function(req, res, next) {
-    res.render('places/search', {title: 'Search', q: req.params.q})
+    const q = req.params.q
+    Place.find({ name: { $regex: new RegExp(q,'gi') } }, function(err, places) {
+        if (err) {
+            return res.status(500).json({
+                shit: true,
+            })
+        }
+        if (!places) {
+            return res.status(200).json({
+                shit: false,
+            })
+        }
+        else {
+            res.render('places/search', {title: 'Search', places: places})
+        }
+    })
 })
 
 module.exports = router
