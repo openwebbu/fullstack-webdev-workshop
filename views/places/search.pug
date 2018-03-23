@@ -2,6 +2,7 @@ extends ../layout
 
 block additionalHead
     link(rel='stylesheet', href='/stylesheets/places/search.css')
+    script(src="/javascripts/search/index.js")
 
 block content
     .container
@@ -10,9 +11,9 @@ block content
                 h5.miss Oopsie, we couldn't find anything :(
             else
                 each place in places
-                    .place
+                    .place(href='/places/' + place.slug)
                         .info
-                            .image(style='background: linear-gradient(to left, #AAFFA9, #11FFBD)')
+                            .image(style='background: ' + place.gradient())
                             .name-and-address
                                 h2.name #{place.name}
                                 h5.address #{place.address || 'No address :('} 
