@@ -15,27 +15,27 @@ section.main {
     color: #fff;
 }
 
-#navbar.transparent .container .menu .search-box input[type="text"] {
+#navbar.transparent .container .search-container .search-box input[type="text"] {
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
 }
 
-#navbar.transparent .container .menu .search-box input[type="text"]:focus {
+#navbar.transparent .container .search-container .search-box input[type="text"]:focus {
     outline: none;
     border: 1px solid #fff;
     background-color: transparent;
 }
 
-#navbar.transparent .container .menu .search-box input[type="text"]::placeholder {
+#navbar.transparent .container .search-container .search-box input[type="text"]::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
-#navbar.transparent .container .menu .search-box .wrapper .search-icon {
+#navbar.transparent .container .search-container .search-box .wrapper .search-icon {
     color: #7F88CE;
 }
 
-#navbar.transparent .container .menu .search-box .wrapper input[type='submit'] {
+#navbar.transparent .container .search-container .search-box .wrapper input[type='submit'] {
     background-color: #fff;
 }
 

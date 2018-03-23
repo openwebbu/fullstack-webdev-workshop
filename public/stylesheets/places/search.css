@@ -86,3 +86,8 @@
     font-weight: 300;
     font-style: italic;
 }
+
+.search-results .miss {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.3);
+}

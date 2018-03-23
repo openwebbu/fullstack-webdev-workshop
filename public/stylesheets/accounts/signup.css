@@ -109,7 +109,7 @@ body #box.signin #im-so-tilted {
     transform: translateX(-230px);
 }
 
-#box #window #fields .signin-fields {
+#box #window #fields #signin-fields {
     display: flex;
     flex-direction: column;
     justify-content: center;

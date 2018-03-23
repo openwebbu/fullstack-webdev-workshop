@@ -6,19 +6,22 @@ block additionalHead
 block content
     .container
         .search-results
-            each place in places
-                .place
-                    .info
-                        .image(style='background: linear-gradient(to left, #AAFFA9, #11FFBD)')
-                        .name-and-address
-                            h2.name #{place.name}
-                            h5.address #{place.address || 'No address :('} 
-                            .website
-                                .web-icon
-                                    i.fas.fa-share-square
-                                if place.website
-                                    a(href=place.website) #{place.website}
-                                else
-                                    p No website :(
-                    .review
-                        p "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quo dignissimos magnam voluptas ipsum et harum excepturi ea a consectetur. Deleniti corrupti animi sapiente porro nemo dolorum et ipsam! Iure!"
+            if !places.length
+                h5.miss Oopsie, we couldn't find anything :(
+            else
+                each place in places
+                    .place
+                        .info
+                            .image(style='background: linear-gradient(to left, #AAFFA9, #11FFBD)')
+                            .name-and-address
+                                h2.name #{place.name}
+                                h5.address #{place.address || 'No address :('} 
+                                .website
+                                    .web-icon
+                                        i.fas.fa-share-square
+                                    if place.website
+                                        a(href=place.website) #{place.website}
+                                    else
+                                        p No website :(
+                        .review
+                            p "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quo dignissimos magnam voluptas ipsum et harum excepturi ea a consectetur. Deleniti corrupti animi sapiente porro nemo dolorum et ipsam! Iure!"
