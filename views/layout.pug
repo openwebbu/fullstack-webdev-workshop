@@ -11,7 +11,6 @@ html
         script(defer, src="https://use.fontawesome.com/releases/v5.0.8/js/all.js")
 
         script(src='/javascripts/app.js')
-        script(src='/javascripts/layout/search.js')
 
         block additionalHead
     body
@@ -21,7 +20,7 @@ html
                     a.logo(href='/') 
                         span.highlight Open
                         | Reviews
-                .menu
+                .search-container
                     .search-box
                         input#search-place-q(type='text', name='q', placeholder='Find places...')
                         .wrapper
@@ -29,8 +28,25 @@ html
                                 i.fas.fa-search
                             input#search-place-submit(type='submit', name='', value='')
                 .account
-                    a.nav(href="/accounts/login") Sign in
-                    h5 or
-                    a.nav(href="/accounts/register") Sign up
+                    if user
+                        h5 Hello,
+                        #open-menu
+                            h5.username #{user.username}
+                            .caret-icon
+                                i.fas.fa-caret-down
+                            #menu
+                                .content
+                                    a.nav-item(href='#')
+                                        .nav-icon
+                                            i.fas.fa-cog
+                                        h5.text Settings
+                                    a.nav-item(href='/accounts/logout')
+                                        .nav-icon
+                                            i.fas.fa-power-off
+                                        h5.text Sign out
+                    else
+                        a.nav(href="/accounts/login") Sign in
+                        h5 or
+                        a.nav(href="/accounts/register") Sign up
         section.main
             block content

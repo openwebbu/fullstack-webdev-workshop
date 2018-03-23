@@ -47,6 +47,14 @@ section.main {
     color: #fff;
 }
 
+#navbar.transparent .container .account #open-menu {
+    border: 1px solid #fff;
+}
+
+#navbar.transparent .container .account #open-menu .caret-icon {
+    color: #fff;
+}
+
 .hero {
     width: 100%;
     height: 100vh;
