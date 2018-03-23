@@ -4,92 +4,99 @@ block additionalHead
     link(rel='stylesheet', href='/stylesheets/places/style.css')
 
 block content
-    .wrapper
+    .wrapper.container
         .profile-container
-            .profile
-                .image(style='background: ' + place.gradient())
-                    .share-btn
-                        .share-icon
-                            i.fas.fa-share-alt
-                .info
-                    h5.name #{place.name}
-                    .field
-                        .field-icon
-                            i.fas.fa-map-marker
-                        p #{place.address || 'No address :('}
-                    .field
-                        .field-icon
-                            i.fas.fa-phone
-                        p #{place.phone || 'No phone number :('}
-                    .field
-                        .field-icon
-                            i.fas.fa-share-square
-                        if place.website
-                            a(href=place.website) #{place.website}
-                        else
-                            p No website :(
+            .fixed
+                .profile
+                    .image(style='background: ' + place.gradient())
+                        .share-btn
+                            .share-icon
+                                i.fas.fa-share-alt
+                    .info
+                        h5.name #{place.name}
+                        .field
+                            .field-icon
+                                i.fas.fa-map-marker
+                            p #{place.address || 'No address :('}
+                        .field
+                            .field-icon
+                                i.fas.fa-phone
+                            p #{place.phone || 'No phone number :('}
+                        .field
+                            .field-icon
+                                i.fas.fa-share-square
+                            if place.website
+                                a(href=place.website) #{place.website}
+                            else
+                                p No website :(
+                a.new-review(href='/places/' + place.slug + '/new-review', style='background: ' + place.gradient())
+                    .inner
+                        .add-icon
+                            i.fas.fa-plus-circle
+                        h5 Add a new review!
         .reviews-container
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-            .review
-                .info
-                    p posted by 
-                        a.user(href="#") shonihei
-                    p.timestamp 2 hours ago
-                .text
-                    p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-            
+            .reviews
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
+                .review
+                    .info
+                        p posted by 
+                            a.user(href="#") shonihei
+                        p.timestamp 2 hours ago
+                    .text
+                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
+                

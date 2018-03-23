@@ -1,0 +1,23 @@
+extends ../layout
+
+block additionalHead
+    link(rel='stylesheet', href='/stylesheets/places/new-review.css')
+
+block content
+    .container.new-review
+        .place
+            .info
+                .image(style='background: ' + place.gradient())
+                .name-and-address
+                    h2.name #{place.name}
+                    h5.address #{place.address || 'No address :('} 
+                    .website
+                        .web-icon
+                            i.fas.fa-share-square
+                        if place.website
+                            a(href=place.website) #{place.website}
+                        else
+                            p No website :(
+        .review-editor
+            textarea(name="review", placeholder="Tell us how you felt!")
+            button#submit-btn(style='background: ' + place.gradient()) Post Review!

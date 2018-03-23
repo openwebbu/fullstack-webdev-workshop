@@ -11,23 +11,27 @@
     width: 400px;
 }
 
-.wrapper .profile-container .profile {
+.wrapper .profile-container .fixed {
+    position: fixed;
     width: 350px;
+}
+
+.wrapper .profile-container .fixed .profile {
     background-color: #fff;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
-    position: fixed;
+    margin-bottom: 40px;
 }
 
-.wrapper .profile-container .profile .image {
+.wrapper .profile-container .fixed .profile .image {
     width: 100%;
     height: 200px;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
 }
 
-.wrapper .profile-container .profile .image .share-btn {
+.wrapper .profile-container .fixed .profile .image .share-btn {
     position: absolute;
     height: 50px;
     width: 50px;
@@ -41,35 +45,35 @@
     justify-content: center;
 }
 
-.wrapper .profile-container .profile .image .share-btn .share-icon {
+.wrapper .profile-container .fixed .profile .image .share-btn .share-icon {
     color: #fff;
 }
 
-.wrapper .profile-container .profile .info {
+.wrapper .profile-container .fixed .profile .info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 50px 20px 20px 20px;
 }
 
-.wrapper .profile-container .profile .info .name {
+.wrapper .profile-container .fixed .profile .info .name {
     font-weight: 500;
     font-size: 25px;
     color: var(--primary-text-color);
     margin-bottom: 30px;
 }
 
-.wrapper .profile-container .profile .info .field {
+.wrapper .profile-container .fixed .profile .info .field {
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
 }
 
-.wrapper .profile-container .profile .info .field:last-child {
+.wrapper .profile-container .fixed .profile .info .field:last-child {
     margin-bottom: 0;
 }
 
-.wrapper .profile-container .profile .info .field .field-icon {
+.wrapper .profile-container .fixed .profile .info .field .field-icon {
     color: var(--primary-color);
     display: inline-block;
     margin-right: 10px;
@@ -79,14 +83,14 @@
     width: 20px;
 }
 
-.wrapper .profile-container .profile .info .field p {
+.wrapper .profile-container .fixed .profile .info .field p {
     display: inline-block;
     font-size: 15px;
     color: var(--primary-text-color);
     word-wrap: break-word;
 }
 
-.wrapper .profile-container .profile .info .field a {
+.wrapper .profile-container .fixed .profile .info .field a {
     display: inline-block;
     font-size: 15px;
     color: var(--primary-color);
@@ -94,7 +98,7 @@
     word-wrap: break-word;
 }
 
-.wrapper .profile-container .profile .info .field a:hover {
+.wrapper .profile-container .fixed .profile .info .field a:hover {
     text-decoration: underline;
 }
 
@@ -102,7 +106,7 @@
     flex: 1;
 }
 
-.wrapper .reviews-container .review {
+.wrapper .reviews-container .reviews .review {
     width: 100%;
     border-radius: 4px;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
@@ -111,7 +115,7 @@
     margin-bottom: 40px;
 }
 
-.wrapper .reviews-container .review .info {
+.wrapper .reviews-container .reviews .review .info {
     display: flex;
     flex-direction: row;
     font-size: 13px;
@@ -119,20 +123,46 @@
     margin-bottom: 15px;
 }
 
-.wrapper .reviews-container .review .info p {
+.wrapper .reviews-container .reviews .review .info p {
     display: inline-block;
 }
 
-.wrapper .reviews-container .review .info p a.user {
+.wrapper .reviews-container .reviews .review .info p a.user {
     color: var(--primary-color);
     text-decoration: none;
 }
 
-.wrapper .reviews-container .review .info .timestamp {
+.wrapper .reviews-container .reviews .review .info .timestamp {
     margin-left: auto;
 }
 
-.wrapper .reviews-container .review .text {
+.wrapper .reviews-container .reviews .review .text {
     color: var(--primary-text-color);
     line-height: 23px;
+}
+
+.wrapper .profile-container .new-review {
+    display: block;
+    text-decoration: none;
+    height: 80px;
+    margin-bottom: 40px;
+    box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.wrapper .profile-container .new-review .inner {
+    height: 100%;
+    width: 100%;
+    border: 1px #fff solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.wrapper .profile-container .new-review .inner h5 {
+    color: #fff;
+    margin-left: 10px;
 }

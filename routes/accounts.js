@@ -2,10 +2,6 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
 
-router.get('/register', (req, res, next) => {
-    res.render('accounts/sign-up-in', { title: 'Express' })
-})
-
 router.post('/register', (req, res, next) => {
     const {username, email, password, password2} = req.body
     if (!username || !email || !password || !password2) {
@@ -44,7 +40,11 @@ router.post('/register', (req, res, next) => {
 })
 
 router.get('/login', (req, res, next) => {
-    res.render('accounts/sign-up-in', { title: 'Express' })
+    res.render('accounts/sign-in', { title: 'Open Reviews - Sign In' })
+})
+
+router.get('/register', (req, res, next) => {
+    res.render('accounts/sign-up', { title: 'Open Reviews - Sign Up' })
 })
 
 router.post('/login', (req, res, next) => {
@@ -70,10 +70,10 @@ router.post('/login', (req, res, next) => {
                 })
             }
             if (isMatch) {
-                req.session.user = user.id
-                console.log(req.session)
+                req.session.user = user
                 return res.status(200).json({
                     success: true,
+                    redirectTo: '/'
                 })
             }
             return res.status(400).json({
@@ -82,6 +82,23 @@ router.post('/login', (req, res, next) => {
             })
         })
     })
+})
+
+router.get('/logout', function(req, res) {
+    if (req.session.user && req.cookies.user_sid) {
+        req.session.destroy(function(err) {
+            if (err) {
+                return res.status(500).json({
+                    success: false,
+                    message: 'something terrible happened'
+                })
+            }
+            res.clearCookie('user_sid')
+            return res.redirect('/')
+        })
+    } else {
+        return res.redirect('/accounts/login');
+    }
 })
 
 module.exports = router
