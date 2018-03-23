@@ -7,11 +7,15 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo')(session)
 
 const index = require('./routes/index')
 
 const app = express()
+
+// TEMPORARY HACK
+// MAKE IT MORE DYNAMIC
+const attachUserToResponse = require('./middleware/auth')
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -29,12 +33,14 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(session({
+    name: 'user_sid',
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true },
+    // cookie: { secure: true },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
+app.use(attachUserToResponse)
 
 app.use('/', index)
 
