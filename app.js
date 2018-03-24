@@ -15,7 +15,7 @@ const app = express()
 
 // TEMPORARY HACK
 // MAKE IT MORE DYNAMIC
-const attachUserToResponse = require('./middleware/auth')
+const authMiddleware = require('./middleware/auth')
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -40,7 +40,7 @@ app.use(session({
     // cookie: { secure: true },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
 }))
-app.use(attachUserToResponse)
+app.use(authMiddleware.attachUserToResponse)
 
 app.use('/', index)
 

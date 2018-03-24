@@ -29,23 +29,23 @@
     height: 200px;
     background-color: rgba(0, 0, 0, 0.5);
     position: relative;
+    padding: 8px;
 }
 
-.wrapper .profile-container .fixed .profile .image .share-btn {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.4);
-    background-color: var(--primary-color);
-    bottom: -25px;
-    left: calc(50% - 25px);
+.wrapper .profile-container .fixed .profile .image .inner {
+    height: 100%;
+    width: 100%;
+    border: 1px #fff solid;
+    border-radius: 4px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
-.wrapper .profile-container .fixed .profile .image .share-btn .share-icon {
+.wrapper .profile-container .fixed .profile .image .name {
+    font-weight: 500;
+    font-size: 25px;
     color: #fff;
 }
 
@@ -53,14 +53,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px 20px 20px 20px;
-}
-
-.wrapper .profile-container .fixed .profile .info .name {
-    font-weight: 500;
-    font-size: 25px;
-    color: var(--primary-text-color);
-    margin-bottom: 30px;
+    padding: 70px 20px 20px 20px;
 }
 
 .wrapper .profile-container .fixed .profile .info .field {
@@ -141,10 +134,15 @@
     line-height: 23px;
 }
 
+.wrapper .reviews-container .reviews .review .text p {
+    line-height: 24px;
+    white-space: pre-line;
+}
+
 .wrapper .profile-container .new-review {
     display: block;
     text-decoration: none;
-    height: 80px;
+    height: 50px;
     margin-bottom: 40px;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
     padding: 8px;
@@ -165,4 +163,134 @@
 .wrapper .profile-container .new-review .inner h5 {
     color: #fff;
     margin-left: 10px;
+}
+
+.wrapper .reviews-container .miss {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.wrapper .reviews-container .miss h5 {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.wrapper .reviews-container .miss a {
+    text-decoration: none;
+    color: rgb(180, 180, 180);
+    padding: 10px 20px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrapper .reviews-container .miss a:hover {
+    background-color: rgb(180, 180, 180);
+    border: 1px solid rgb(180, 180, 180);
+    color: #fff;
+}
+
+.wrapper .profile-container .fixed .profile .info .score {
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 0 10px;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(200, 200, 200);
+    position: relative;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .marker {
+    position: absolute;
+    height: 9px;
+    width: 9px;
+    border-radius: 9px;
+    background-color: var(--primary-color);
+    animation: pulse 2s infinite;
+    top: -3px;
+    z-index: 1;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .val {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-color: var(--primary-color);
+    top: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0px 7px 20px -5px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    z-index: 2;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .stick {
+    position: absolute;
+    height: 20px;
+    width: 1px;
+    border-radius: 40px;
+    background-color: var(--primary-color);
+    top: -20px;
+    z-index: 1;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .tick {
+    position: absolute;
+    height: 11px;
+    width: 1px;
+    top: -5px;
+    background-color: rgb(200, 200, 200);
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .tick.left {
+    left: 0;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .tick.right {
+    right: 0;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .tick.mid {
+    left: 50%;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .expr-icon {
+    position: absolute;
+    top: 10px;
+    color: rgb(200, 200, 200);
+    font-size: 18px;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .expr-icon.neg {
+    left: -9px;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .expr-icon.pos {
+    right: -9px;
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .expr-icon.meh {
+    left: calc(50% - 9px);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(87, 151, 233, 0.8);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(87, 151, 233, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(87, 151, 233, 0);
+    }
 }
