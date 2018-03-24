@@ -9,11 +9,24 @@ block content
             .fixed
                 .profile
                     .image(style='background: ' + place.gradient())
-                        .share-btn
-                            .share-icon
-                                i.fas.fa-share-alt
+                        .inner
+                            h5.name #{place.name}
                     .info
-                        h5.name #{place.name}
+                        .field.score
+                            #bar
+                                .marker(style='left: calc( -4px + ' + place.normalizeSentiment() + '%);')
+                                .val(style='left: calc(-20px + ' + place.normalizeSentiment() + '%);')
+                                    h5 #{Math.floor(place.normalizeSentiment())}
+                                .stick(style='left: ' + place.normalizeSentiment() + '%;')
+                                .tick.left
+                                .tick.mid
+                                .tick.right
+                                .expr-icon.pos
+                                    i.far.fa-smile
+                                .expr-icon.meh
+                                    i.far.fa-meh
+                                .expr-icon.neg
+                                    i.far.fa-frown
                         .field
                             .field-icon
                                 i.fas.fa-map-marker
@@ -35,68 +48,17 @@ block content
                             i.fas.fa-plus-circle
                         h5 Add a new review!
         .reviews-container
-            .reviews
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. In sapiente asperiores eos ut doloribus ipsa officia necessitatibus aliquid! Suscipit corrupti qui vel sit? Corporis ullam in molestiae numquam distinctio architecto."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis nobis sed porro, ex sit ad tempora vel ullam aliquam tempore nostrum consequuntur ab sunt modi magnam? Nihil rerum quas facere."
-                .review
-                    .info
-                        p posted by 
-                            a.user(href="#") shonihei
-                        p.timestamp 2 hours ago
-                    .text
-                        p "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae reprehenderit odio aliquid recusandae eius, commodi blanditiis amet repudiandae! Officia possimus nisi, voluptatibus aliquam pariatur quaerat obcaecati similique facilis eum ipsam!"
-                
+            if !place.reviews.length
+                .miss
+                    h5 Oopsie, looks like no one wrote a review yet :(
+                    a(href='/places/' + place.slug + '/new-review') Be the first!
+            else
+                each review in place.reviews
+                    .reviews
+                        .review
+                            .info
+                                p posted by 
+                                    a.user(href="#") #{review.by.username}
+                                p.timestamp #{review.ago()}
+                            .text
+                                p #{review.text}

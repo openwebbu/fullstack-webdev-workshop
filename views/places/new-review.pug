@@ -19,5 +19,6 @@ block content
                         else
                             p No website :(
         .review-editor
-            textarea(name="review", placeholder="Tell us how you felt!")
-            button#submit-btn(style='background: ' + place.gradient()) Post Review!
+            form(method='post', action='/places/' + place.slug + '/new-review')
+                textarea(name="text", placeholder="Tell us how you felt!")
+                input#submit-btn(type='submit', style='background: ' + place.gradient(), value='Post Review!')
