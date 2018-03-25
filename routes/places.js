@@ -109,7 +109,9 @@ router.post('/:slug/new-review', function(req, res) {
 
 router.get('/search/:q', function(req, res, next) {
     const q = req.params.q
-    Place.find({ name: { $regex: new RegExp(q,'gi') } }, function(err, places) {
+    Place.find({ name: { $regex: new RegExp(q,'gi') } })
+         .populate('reviews')
+         .exec(function(err, places) {
         if (err) {
             return res.status(500).json({
                 shit: true,

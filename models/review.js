@@ -40,6 +40,13 @@ Review.methods.ago = function() {
     return timeAgo.ago(this.created)
 }
 
+Review.methods.normalizeSentiment = function() {
+    const [a, b] = [-1, 1]
+    const [c, d] = [0, 100]
+    const x = this.sentimentScore
+    return (x - a) * ((d - c) / (b - a)) + c
+}
+
 Review.pre('save', function(next) {
     const review = this
 

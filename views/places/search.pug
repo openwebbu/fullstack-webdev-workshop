@@ -25,4 +25,7 @@ block content
                                     else
                                         p No website :(
                         .review
-                            p "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus quo dignissimos magnam voluptas ipsum et harum excepturi ea a consectetur. Deleniti corrupti animi sapiente porro nemo dolorum et ipsam! Iure!"
+                            if !place.reviews.length
+                                p No review yet :(
+                            else
+                                p &#34;#{place.reviews[0].text}&#34;

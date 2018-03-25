@@ -64,6 +64,12 @@ router.post('/login', (req, res, next) => {
                 message: err.code,
             })
         }
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: 'user not found',
+            })
+        }
         user.comparePassword(password, function(err, isMatch) {
             if (err) {
                 return res.status(400).json({
