@@ -36,10 +36,11 @@ html
                                 i.fas.fa-caret-down
                             #menu
                                 .content
-                                    a.nav-item(href='#')
-                                        .nav-icon
-                                            i.fas.fa-cog
-                                        h5.text Settings
+                                    if user.isAdmin
+                                        a.nav-item(href='/admin')
+                                            .nav-icon
+                                                i.fas.fa-unlock-alt
+                                            h5.text Admin Dashboard
                                     a.nav-item(href='/places/new')
                                         .nav-icon
                                             i.fas.fa-utensils

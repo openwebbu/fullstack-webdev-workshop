@@ -1,0 +1,108 @@
+.requests {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.requests-container {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+    color: var(--primary-text-color);
+}
+
+.request {
+    display: block;
+    position: relative;
+    width: 100%;
+    box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+    color: var(--primary-text-color);
+}
+
+.request:first-child {
+    margin-top: 0;
+}
+
+.request:last-child {
+    margin-bottom: 0;
+}
+
+.request .info {
+    display: flex;
+    flex-direction: row;
+}
+
+.request .info .name-and-address {
+    display: flex;
+    flex-direction: column;
+}
+
+.request .info .name-and-address .name {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.request .info .name-and-address .address {
+    font-weight: 300;
+    margin-bottom: 2px;
+}
+
+.request .info .name-and-address .website {
+    font-weight: 300;
+}
+
+.request .info .name-and-address .website {
+    display: flex;
+    flex-direction: row;
+}
+
+.request .info .name-and-address .website .web-icon {
+    color: var(--primary-color);
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.request .info .name-and-address .website a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.request .info .name-and-address .website a:hover {
+    text-decoration: underline;
+}
+
+.request .action {
+    margin-top: 20px;
+}
+
+.request .action button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.request .action button:focus {
+    outline: none;
+}
+
+.request .action .approve {
+    background-color: rgb(78, 196, 78);
+    margin-right: 20px;
+}
+
+.request .action .reject {
+    background-color: rgb(226, 101, 101);
+}

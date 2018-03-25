@@ -15,6 +15,14 @@ const authMiddleware = {
         else {
             res.redirect('/accounts/login')
         }
+    },
+    isAdmin: function(req, res, next) {
+        if (req.session.user && req.session.user.isAdmin) {
+            next()
+        }
+        else {
+            res.redirect('/')
+        }
     }
 
 }
