@@ -14,10 +14,14 @@ block content
                     .info
                         .field.score
                             #bar
-                                .marker(style='left: calc( -4px + ' + place.normalizeSentiment() + '%);')
-                                .val(style='left: calc(-20px + ' + place.normalizeSentiment() + '%);')
-                                    h5 #{Math.floor(place.normalizeSentiment())}
-                                .stick(style='left: ' + place.normalizeSentiment() + '%;')
+                                if place.numReviews > 0
+                                    .marker(style='left: calc( -4px + ' + place.normalizeSentiment() + '%);')
+                                    .val(style='left: calc(-20px + ' + place.normalizeSentiment() + '%);')
+                                        h5 #{Math.floor(place.normalizeSentiment())}
+                                    .stick(style='left: ' + place.normalizeSentiment() + '%;')
+                                else
+                                    .no-score
+                                        p No score available :(
                                 .tick.left
                                 .tick.mid
                                 .tick.right
@@ -57,8 +61,9 @@ block content
                     .reviews
                         .review
                             .info
-                                p posted by 
+                                h5.ind-score #{Math.floor(review.normalizeSentiment())}
+                                p.by posted by 
                                     a.user(href="#") #{review.by.username}
                                 p.timestamp #{review.ago()}
                             .text
-                                p #{review.text}
+                                p &#34;#{review.text}&#34;

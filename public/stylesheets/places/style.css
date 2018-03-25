@@ -41,6 +41,7 @@
     justify-content: center;
     align-items: center;
     color: #fff;
+    padding: 10px;
 }
 
 .wrapper .profile-container .fixed .profile .image .name {
@@ -53,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 20px 20px 20px;
+    padding: 20px;
 }
 
 .wrapper .profile-container .fixed .profile .info .field {
@@ -104,7 +105,7 @@
     border-radius: 4px;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
     background-color: #fff;
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
     margin-bottom: 40px;
 }
 
@@ -114,6 +115,18 @@
     font-size: 13px;
     color: var(--primary-text-color-u);
     margin-bottom: 15px;
+    align-items: center;
+}
+
+.wrapper .reviews-container .reviews .review .info .ind-score {
+    padding: 7px 10px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+
+.wrapper .reviews-container .reviews .review .info .by {
+    margin-left: auto;
 }
 
 .wrapper .reviews-container .reviews .review .info p {
@@ -126,7 +139,7 @@
 }
 
 .wrapper .reviews-container .reviews .review .info .timestamp {
-    margin-left: auto;
+    margin-left: 3px;
 }
 
 .wrapper .reviews-container .reviews .review .text {
@@ -198,6 +211,7 @@
     width: 100%;
     margin-bottom: 50px;
     padding: 0 10px;
+    margin-top: 50px;
 }
 
 .wrapper .profile-container .fixed .profile .info .score #bar {
@@ -293,4 +307,15 @@
     100% {
         box-shadow: 0 0 0 0 rgba(87, 151, 233, 0);
     }
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .no-score {
+    position: absolute;
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+}
+
+.wrapper .profile-container .fixed .profile .info .score #bar .no-score p {
+    color: rgb(200, 200, 200);
 }
