@@ -10,8 +10,14 @@ window.onload = () => {
     const signupFields = document.getElementById('signup-fields')
     const fields = [signupFields, signinFields]
 
-    signin.addEventListener('click', toggleSignIn)
-    signup.addEventListener('click', toggleSignIn)
+    signin.addEventListener('click', function() {
+        if (signinMode) return
+        toggleSignIn()
+    })
+    signup.addEventListener('click', function() {
+        if (!signinMode) return
+        toggleSignIn()
+    })
     submitBtn.addEventListener('click', submit)
     for (let textField of textFields) {
         textField.addEventListener('keyup', detectEnter)
@@ -39,11 +45,20 @@ window.onload = () => {
 
     function submit() {
         const data = retrieveFormData(fields[signinMode])
-        postData('/accounts/login', data).then(json => {
-            if (json.success && json.redirectTo) {
-                location.href = json.redirectTo
-            }
-        })
+        if (signinMode) {
+            postData('/accounts/login', data).then(json => {
+                if (json.success && json.redirectTo) {
+                    location.href = json.redirectTo
+                }
+            })
+        }
+        else {
+            postData('/accounts/register', data).then(json => {
+                if (json.success && json.redirectTo) {
+                    location.href = json.redirectTo
+                }
+            })
+        }
     }
 
     function toggleSignIn(push=true) {

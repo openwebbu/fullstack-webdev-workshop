@@ -3,13 +3,39 @@ const router = express.Router()
 const Place = require('../models/place')
 const authMiddleware = require('../middleware/auth')
 const Review = require('../models/review')
+const PlaceRequest = require('../models/placeRequest')
 
-router.get('/:slug', function(req, res, next) {
+router.get('/new', authMiddleware.isAuthenticated, function(req, res) {
+    res.render('places/new-place', { title: 'Request a new place!'})
+})
+
+router.post('/new', function(req, res) {
+    const user = req.session.user
+    const {name, address, phone, website, description} = req.body
+    const newRequest = new PlaceRequest({
+        name: name,
+        address: address,
+        phone: phone,
+        website: website,
+        description: description,
+        by: user,
+    })
+
+    newRequest.save(function(err, request) {
+        if (err) {
+            console.log(err)
+            return res.render('places/new-place', { title: 'Request a new place!' })
+        }
+        return res.redirect('/')
+    })
+})
+
+router.get('/:slug', function(req, res) {
     const slug = req.params.slug
     Place
         .findOne({ slug: slug })
         .populate({
-            path:     'reviews',			
+            path: 'reviews',			
             populate: { path:  'by',
                         model: 'User' }
         })

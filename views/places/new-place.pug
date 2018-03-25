@@ -1,0 +1,22 @@
+extends ../layout
+
+block additionalHead
+    link(rel='stylesheet', href='/stylesheets/places/new-place.css')
+
+block content
+    .container.new-place
+        .form-container
+            h3 Request a place to be added!
+            h5 Once you submit the request, our admin will verify the information and publish it for you!
+            form(method='post', action='/places/new')
+                .field
+                    input(type='text', name='name', placeholder="Name of the place")
+                .field
+                    input(type='text', name='address', placeholder="Address")
+                .field
+                    input(type='text', name='phone', placeholder="phone")
+                .field
+                    input(type='text', name='website', placeholder="Website")
+                .field
+                    input(type='text', name='description', placeholder="Description")
+                input#submit-btn(type='submit', value='Post Review!')

@@ -33,8 +33,10 @@ router.post('/register', (req, res, next) => {
                 success: false,
             })
         }
+        req.session.user = user
         return res.status(200).json({
             success: true,
+            redirectTo: '/'
         })
     })
 })

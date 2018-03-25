@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const slugify = require('slugify')
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 const gradients = require('./gradients')
 
