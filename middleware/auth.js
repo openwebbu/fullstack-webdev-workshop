@@ -2,6 +2,8 @@ const authMiddleware = {
     attachUserToResponse: function(req, res, next) {
         if (req.session.user) {
             res.locals.user = req.session.user
+            res.locals.flash = req.session.flash
+            delete req.session.flash
             next()
         }
         else {
@@ -13,18 +15,10 @@ const authMiddleware = {
             next()
         }
         else {
+            req.session.returnTo = req.originalUrl
             res.redirect('/accounts/login')
         }
     },
-    isAdmin: function(req, res, next) {
-        if (req.session.user && req.session.user.isAdmin) {
-            next()
-        }
-        else {
-            res.redirect('/')
-        }
-    }
-
 }
 
 module.exports = authMiddleware
