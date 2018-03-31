@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const ObjectId = Schema.Types.ObjectId
 const client = new language.LanguageServiceClient({
     projectId: process.env.GCLOUD_PROJECT_ID,
-    keyFilename: process.env.GLOUD_KEYFILE_PATH,
+    keyFilename: process.env.GCLOUD_KEYFILE_PATH,
 })
 
 const Review = new Schema({
