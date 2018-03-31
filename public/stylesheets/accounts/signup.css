@@ -3,7 +3,6 @@
     --primary-text-color: rgb(75, 75, 75);
     --primary-color: rgb(87, 151, 233);
     --transition: cubic-bezier(0.95,-0.3,0,1.2);
-    --transition-length: 0.7s;
 }
 
 body {
@@ -17,7 +16,7 @@ body {
 }
 
 body #box {
-    width: 600px;
+    width: 500px;
     background-color: #fff;
     box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
     padding: 20px;
@@ -38,24 +37,13 @@ body #box #im-so-tilted {
     right: -50px;
     top: -70px;
     box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.3) inset;
-    transition: all var(--transition-length) var(--transition);
     z-index: 2;
-}
-
-body #box.signin #im-so-tilted {
-    transform: rotateZ(10deg) translateX(-525px);
-    box-shadow: -5px 3px 10px rgba(0, 0, 0, 0.3) inset;
 }
 
 #box #logo-container {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    transition: transform var(--transition-length) var(--transition);
-}
-
-#box.signin #logo-container {
-    transform: translateX(495px);
 }
 
 #box .logo {
@@ -71,11 +59,6 @@ body #box.signin #im-so-tilted {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    transition: transform var(--transition-length) var(--transition);
-}
-
-#box.signin #action-choices {
-    transform: translateX(270px);
 }
 
 #box #action-choices .big-text {
@@ -83,8 +66,6 @@ body #box.signin #im-so-tilted {
     font-size: 40px;
     font-weight: 700;
     color: rgba(75, 75, 75, 0.2);
-    transition: color 0.2s ease-in-out;
-    cursor: pointer;
     user-select: none;
 }
 
@@ -99,37 +80,22 @@ body #box.signin #im-so-tilted {
     font-weight: 300;
 }
 
-#box #window #fields {
+#box #fields {
     margin-bottom: 20px;
-    transition: transform var(--transition-length) var(--transition);
     display: flex;
 }
 
-#box.signin #window #fields {
-    transform: translateX(-230px);
-}
-
-#box #window #fields #signin-fields {
+#box #fields #signin-fields {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#box #window {
-    width: 230px;
-    overflow: hidden;
-    transition: transform var(--transition-length) var(--transition);
-}
-
-#box.signin #window {
-    transform: translateX(365px);
-}
-
-#box #window #fields .field {
+#box #fields .field {
     position: relative;
 }
 
-#box #window #fields .field .text-field {
+#box #fields .field .text-field {
     width: 230px;
     font-size: 16px;
     padding: 10px 10px 8px 35px;
@@ -142,28 +108,28 @@ body #box.signin #im-so-tilted {
     font-weight: 300;
 }
 
-#box #window #fields .field .text-field:focus {
+#box #fields .field .text-field:focus {
     outline: none;
     border-bottom: solid 8px var(--primary-text-color);
 }
 
-#box #window #fields .field .text-field:focus + .field-icon {
+#box #fields .field .text-field:focus + .field-icon {
     color: var(--primary-text-color);
 }
 
-#box #window #fields .field .text-field::placeholder {
+#box #fields .field .text-field::placeholder {
     color: var(--primary-text-color-u);
 }
 
-#box #window #fields .field .text-field:not(:placeholder-shown) {
+#box #fields .field .text-field:not(:placeholder-shown) {
     border-bottom: solid 2px var(--primary-text-color);
 }
 
-#box #window #fields .field .text-field:not(:placeholder-shown) + .field-icon {
+#box #fields .field .text-field:not(:placeholder-shown) + .field-icon {
     color: var(--primary-text-color);
 }
 
-#box #window #fields .field .field-icon {
+#box #fields .field .field-icon {
     position: absolute;
     left: 5px;
     top: 10px;
@@ -196,10 +162,9 @@ body #box.signin #im-so-tilted {
     transform: scale(1.05);
 }
 
-#box #submit {
-    transition: transform var(--transition-length) var(--transition);
-}
-
-#box.signin #submit {
-    transform: translateX(427px);
+.error {
+    color: rgb(245, 97, 97);
+    font-size: 12px;
+    max-width: 200px;
+    margin-bottom: 20px;
 }
