@@ -10,46 +10,27 @@ html
 
         link(rel='stylesheet', href='/stylesheets/layout/reset.css')
         link(rel='stylesheet', href='/stylesheets/accounts/signup.css')
-        script(src="/javascripts/accounts/signin.js")
     body
-        #box.signin
+        #box
             #im-so-tilted
             #logo-container
-                a.logo(href='/') 
+                a.logo(href='/')
                     span.highlight Open
                     | Reviews
             #action-choices
-                h2#signup.big-text Sign Up
-                p or
                 h2#signin.big-text.selected Sign in
 
-            #window
-                #fields
-                    #signup-fields
-                        .field
-                            input.text-field.signup-field(type="text", placeholder="username", name="username")
-                            .field-icon
-                                i.fas.fa-user
-                        .field
-                            input.text-field.signup-field(type="text", placeholder="email", name="email")
-                            .field-icon
-                                i.fas.fa-envelope
-                        .field
-                            input.text-field.signup-field(type="password", placeholder="password", name="password")
-                            .field-icon
-                                i.fas.fa-lock
-                        .field
-                            input.text-field.signup-field(type="password", placeholder="retype your password", name="password2")
-                            .field-icon
-                                i.fas.fa-lock
-                    #signin-fields
-                        .field
-                            input.text-field.signin-field(type="text", placeholder="username", name="username")
-                            .field-icon
-                                i.fas.fa-user
-                        .field
-                            input.text-field.signin-field(type="password", placeholder="password", name="password")
-                            .field-icon
-                                i.fas.fa-lock
-            #submit
-                button#submit-btn Sign in
+            if message
+                p.error #{message}
+            #fields
+                form(action='/accounts/login', method="post")
+                    .field
+                        input.text-field.signin-field(type="text", placeholder="username", name="username")
+                        .field-icon
+                            i.fas.fa-user
+                    .field
+                        input.text-field.signin-field(type="password", placeholder="password", name="password")
+                        .field-icon
+                            i.fas.fa-lock
+                    #submit
+                        input#submit-btn(type='submit', value='Sign in')

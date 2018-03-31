@@ -10,7 +10,6 @@ html
 
         link(rel='stylesheet', href='/stylesheets/layout/reset.css')
         link(rel='stylesheet', href='/stylesheets/accounts/signup.css')
-        script(src="/javascripts/accounts/signup.js")
     body
         #box
             #im-so-tilted
@@ -20,36 +19,26 @@ html
                     | Reviews
             #action-choices
                 h2#signup.big-text.selected Sign Up
-                p or
-                h2#signin.big-text Sign in
 
-            #window
-                #fields
-                    #signup-fields
-                        .field
-                            input.text-field.signup-field(type="text", placeholder="username", name="username")
-                            .field-icon
-                                i.fas.fa-user
-                        .field
-                            input.text-field.signup-field(type="text", placeholder="email", name="email")
-                            .field-icon
-                                i.fas.fa-envelope
-                        .field
-                            input.text-field.signup-field(type="password", placeholder="password", name="password")
-                            .field-icon
-                                i.fas.fa-lock
-                        .field
-                            input.text-field.signup-field(type="password", placeholder="retype your password", name="password2")
-                            .field-icon
-                                i.fas.fa-lock
-                    #signin-fields
-                        .field
-                            input.text-field.signin-field(type="text", placeholder="username", name="username")
-                            .field-icon
-                                i.fas.fa-user
-                        .field
-                            input.text-field.signin-field(type="password", placeholder="password", name="password")
-                            .field-icon
-                                i.fas.fa-lock
-            #submit
-                button#submit-btn Create an account
+            if message
+                p.error #{message}
+            #fields
+                form(action="/accounts/register", method='post')
+                    .field
+                        input.text-field.signup-field(type="text", placeholder="username", name="username")
+                        .field-icon
+                            i.fas.fa-user
+                    .field
+                        input.text-field.signup-field(type="text", placeholder="email", name="email")
+                        .field-icon
+                            i.fas.fa-envelope
+                    .field
+                        input.text-field.signup-field(type="password", placeholder="password", name="password")
+                        .field-icon
+                            i.fas.fa-lock
+                    .field
+                        input.text-field.signup-field(type="password", placeholder="retype your password", name="password2")
+                        .field-icon
+                            i.fas.fa-lock
+                    #submit
+                        input#submit-btn(type='submit', value='Create an account!')

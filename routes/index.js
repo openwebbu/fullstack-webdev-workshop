@@ -2,7 +2,7 @@ const router = require('express').Router()
 const fs = require('fs')
 
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Home' })
+    res.render('index', { title: 'Home'})
 })
 
 // Dynamically loads all routes recursively in the routes directory
