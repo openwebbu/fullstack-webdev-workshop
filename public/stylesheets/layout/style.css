@@ -292,3 +292,64 @@ section.main {
     transform: rotateX(0deg) translateY(0px);
     opacity: 1;
 }
+
+@keyframes showFlash {
+    0%, 100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    10%, 90% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.flash-message-container {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transform: translateY(50px);
+    opacity: 0;
+    pointer-events: none;
+    animation: showFlash 5s ease-in-out;
+}
+
+.flash-message-container .flash {
+    width: 50%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 5px 40px -7px rgba(0, 0, 0, 0.6);
+}
+
+.flash-message-container .flash .box {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flash-message-container .flash .box.success {
+    background-color: rgb(81, 201, 81);
+}
+
+.flash-message-container .flash .box.error {
+    background-color: rgb(201, 85, 81);
+}
+
+.flash-message-container .flash .box .icon {
+    font-size: 20px;
+}

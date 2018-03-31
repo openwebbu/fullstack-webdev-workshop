@@ -32,6 +32,7 @@
 }
 
 .place .info .image {
+    flex-shrink: 0;
     height: 70px;
     width: 70px;
     border-radius: 5px;

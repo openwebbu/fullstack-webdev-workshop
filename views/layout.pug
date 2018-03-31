@@ -14,6 +14,17 @@ html
 
         block additionalHead
     body
+        if flash
+            .flash-message-container
+                .flash
+                    .box(class=flash.type)
+                        if flash.type === "success"
+                            .icon.check
+                                i.fas.fa-check-circle
+                        else
+                            .icon.warning
+                                i.fas.fa-exclamation-circle
+                    p #{flash.message}
         nav#navbar.transparent
             .container
                 .logo-container
@@ -36,11 +47,6 @@ html
                                 i.fas.fa-caret-down
                             #menu
                                 .content
-                                    if user.isAdmin
-                                        a.nav-item(href='/admin')
-                                            .nav-icon
-                                                i.fas.fa-unlock-alt
-                                            h5.text Admin Dashboard
                                     a.nav-item(href='/places/new')
                                         .nav-icon
                                             i.fas.fa-utensils
