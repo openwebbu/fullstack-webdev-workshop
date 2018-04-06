@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router()
 const Place = require('../models/place')
-const authMiddleware = require('../middleware/auth')
+const auth = require('../middleware/auth')
 const Review = require('../models/review')
 
 router.route('/new')
-    .get(authMiddleware.isAuthenticated, function(req, res) {
+    .get(auth.isAuthenticated, function(req, res) {
         return res.render('places/new-place', {title: 'Add a new place!'})
     })
     .post(function(req, res) {
@@ -69,7 +69,7 @@ router.get('/:slug', function(req, res) {
 })
 
 router.route('/:slug/new-review')
-    .get(authMiddleware.isAuthenticated, function(req, res) {
+    .get(auth.isAuthenticated, function(req, res) {
         const slug = req.params.slug
         Place.findOne({ slug: slug }, function(err, place) {
             if (err) {
@@ -136,23 +136,21 @@ router.route('/:slug/new-review')
 
 router.get('/search/:q', function(req, res, next) {
     const q = req.params.q
-    Place.find({ name: { $regex: new RegExp(q,'gi') } })
-         .populate('reviews')
-         .exec(function(err, places) {
-        if (err) {
-            return res.status(500).json({
-                shit: true,
-            })
-        }
-        if (!places) {
-            return res.status(200).json({
-                shit: false,
-            })
-        }
-        else {
-            res.render('places/search', {title: 'Search', places: places})
-        }
-    })
+    Place
+        .find({ name: { $regex: new RegExp(q,'gi') } })
+        .populate('reviews')
+        .exec(function(err, places) {
+            if (err || !places) {
+                req.session.flash = {
+                    type: 'error',
+                    message: 'Something went wrong on our end...',
+                }
+                return res.redirect('/')
+            }
+            else {
+                res.render('places/search', {title: 'Search', places: places})
+            }
+        })
 })
 
 module.exports = router
