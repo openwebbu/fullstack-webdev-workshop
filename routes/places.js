@@ -51,8 +51,9 @@ router.get('/:slug', function(req, res) {
         .findOne({ slug: slug })
         .populate({
             path: 'reviews',			
-            populate: { path:  'by',
-                        model: 'User' }
+            populate: { 
+                path: 'by'
+            }
         })
         .exec(function(err, place) {
 
