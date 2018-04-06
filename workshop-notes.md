@@ -106,8 +106,14 @@
     - If I hardcoded this datbase location and I sent it out to you guys, then someone could delete my entire database.
     - So I would want to keep it a secret. 
     - We will be defining secrets like this in .env file and one of the module we installed called "dotenv" will keep track of this.
-10. The application is very barebones right now, so let's beef it up with some basic authentication.
-11. Pretty much every application needs a sign-in and sign-up feature, let's add it!
+10. Adding some .env variables
+    - Let's add the location of our database.
+        - If you were successful in installing mongodb on your own laptop, then likely, your host will be "mongodb://localhost/open-reviews" If you couldn't and you came to talk to me about it, I should've given you a special host for it.
+    - Session secret. Session secrets must be set in order to encrypt information about users who are currently using our application. It doesn't matter what it is for the purpose of this workshop but when you're using it in a real product, make sure you set it to something unpredictable.
+    - google cloud project id. You should've downloaded the google cloud private key file and moved it into somewhere convenient like the Desktop. Inside of this file is a field called "project_id". Copy and past this in here.
+    - google cloud keyfile location. You should've also moved the private key file to the project directory. If you don't know much about unix path syntax then make sure you copied your key into the project directory and type "./gcloud-key.json" For those who know how to navigate the path system, make sure you write a string to point to this private key file.
+11. The application is very barebones right now, so let's beef it up with some basic authentication.
+12. Pretty much every application needs a sign-in and sign-up feature, let's add it!
 
 ## 3.2 User schema to Authentication
 ### 3.2.1 What the heck is a schema
