@@ -650,7 +650,7 @@
                     type: 'error',
                     message: 'Something went wrong on our side...'
                 }
-                return res.render(`/places/${slug}/new-review`, {
+                return res.render(`places/new-review`, {
                     text: review,
                 })
             }
