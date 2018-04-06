@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
-const SALT_WORK_FACTOR = parseInt(process.env.SALT_WORK_FACTOR)
+const SALT_WORK_FACTOR = 10
 const Schema = mongoose.Schema
 
 const User = new Schema({
