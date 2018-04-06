@@ -553,6 +553,11 @@
         ```
     - Send the data to Google and handle the response from Google
         ```javascript
+        const document = {
+            content: review.text,
+            type: 'PLAIN_TEXT',
+        }
+
         client
             .analyzeSentiment({document: document})
             .then(results => {
