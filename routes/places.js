@@ -9,7 +9,6 @@ router.route('/new')
         return res.render('places/new-place', {title: 'Add a new place!'})
     })
     .post(function(req, res) {
-        const user = req.session.user
         const {name, address, phone, website, description} = req.body
 
         if (!name) {

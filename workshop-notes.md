@@ -361,7 +361,6 @@
     - Extract user submitted data
         ```javascript
         .post(function(req, res) {
-            const user = req.session.user
             const {name, address, phone, website, description} = req.body
         })
         ```
