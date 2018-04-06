@@ -72,12 +72,12 @@ router.route('/:slug/new-review')
     .get(auth.isAuthenticated, function(req, res) {
         const slug = req.params.slug
         Place.findOne({ slug: slug }, function(err, place) {
-            if (err) {
-                res.render('error')
-            }
-            
-            if (!place) {
-                res.render('places/search')
+            if (err || !place) {
+                req.session.flash = {
+                    type: 'error',
+                    message: "Oops... Looks like we couldn't find a place you were trying to review",
+                }
+                return res.redirect('/')
             }
             res.render('places/new-review', { place: place, title: place.name })
         })
