@@ -53,7 +53,7 @@ class OpenReview {
         searchSubmit.addEventListener('click', this.search)
     }
     
-    postData(url, data) {
+    postData(url, data, method) {
         return fetch(url, {
           body: JSON.stringify(data),
           cache: 'no-cache',
@@ -62,7 +62,7 @@ class OpenReview {
             'user-agent': 'Mozilla/4.0 MDN Example',
             'content-type': 'application/json'
           },
-          method: 'POST',
+          method: method,
           mode: 'cors',
           redirect: 'follow',
           referrer: 'client',
