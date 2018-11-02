@@ -114,12 +114,27 @@ router.get('/search/:q', function(req, res, next) {
 })
 
 router.route('/:slug/:id')
+    .put(function(req, res) {
+        const slug = req.params.slug
+        const id = req.params.id
+        Place.findOne({ slug: slug }, function(err, place) {
+            if (err || !place) {
+                return res.json({ success: false })
+            }
+            Review.findByIdAndUpdate(id, {text: req.body.text}, function(err, review) {
+                if (err || !review) {
+                    return res.json({ success: false })
+                }
+                return res.json({ sucess: true })
+            })
+        })
+    })
     .delete(function(req, res) {
         const slug = req.params.slug
         const id = req.params.id
         Place.findOne({ slug: slug }, function(err, place) {
             if (err || !place) {
-                return res.json({ success: true })
+                return res.json({ success: false })
             }
             Review.findByIdAndRemove(id, function(err, review) {
                 if (err || !review) {

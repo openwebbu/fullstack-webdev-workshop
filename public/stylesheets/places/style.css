@@ -135,6 +135,15 @@
     color: var(--primary-color);
 }
 
+.wrapper .reviews-container .reviews .review .info .editor .action.edit-review.active {
+    color: #FF4500;
+}
+
+.wrapper .reviews-container .reviews .review .info .editor .action.delete-review.disabled {
+    color: #cfcfcf;
+    pointer-events: none;
+}
+
 .wrapper .reviews-container .reviews .review .info .ind-score {
     padding: 7px 10px;
     color: #fff;
@@ -159,19 +168,49 @@
     margin-left: 3px;
 }
 
-.wrapper .reviews-container .reviews .review .text {
-    color: var(--primary-text-color);
-    line-height: 23px;
+.wrapper .reviews-container .reviews .review .input-container {
+    position: relative;
 }
 
-.wrapper .reviews-container .reviews .review .text input {
-    line-height: 24px;
+.wrapper .reviews-container .reviews .review .input-container .text {
     white-space: pre-line;
     color: var(--primary-text-color);
     line-height: 23px;
     border-radius: 4px;
-    border: 1px solid var(--primary-text-color);
-    border-color: #fff;
+    border: 1px solid #fff;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    resize: none;
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    min-height: 27px;
+    overflow:hidden;
+}
+
+.wrapper .reviews-container .reviews .review .input-container.edit-mode .text {
+    padding: 16px 12px;
+    border-color: var(--primary-text-color);
+    margin-top: 10px;
+}
+
+.wrapper .reviews-container .reviews .review .input-container .submit-btn {
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    bottom: -13px;
+    padding: 6px 19px;
+    border-radius: 100px;
+    box-shadow: 0px 7px 40px -10px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.wrapper .reviews-container .reviews .review .input-container.edit-mode .submit-btn {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .wrapper .profile-container .new-review {

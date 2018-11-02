@@ -49,5 +49,6 @@ block content
                                         i.fas.fa-edit
                                     .action.delete-review(data-place=place.slug, data-review=review._id)
                                         i.fas.fa-trash
-                            .text
-                                input(type="text" value=review.text)
+                            .input-container
+                                textarea.text(readonly rows=1) #{review.text}
+                                btn.submit-btn(style='background: ' + place.gradient(), data-place=place.slug, data-review=review._id) Submit
