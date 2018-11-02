@@ -2,6 +2,7 @@ extends ../layout
 
 block additionalHead
     link(rel='stylesheet', href='/stylesheets/places/style.css')
+    script(src="/javascripts/places/index.js")
 
 block content
     .wrapper.container
@@ -12,25 +13,6 @@ block content
                         .inner
                             h5.name #{place.name}
                     .info
-                        .field.score
-                            #bar
-                                if place.numReviews > 0
-                                    .marker(style='left: calc( -4px + ' + place.normalizeSentiment() + '%);')
-                                    .val(style='left: calc(-20px + ' + place.normalizeSentiment() + '%);')
-                                        h5 #{Math.floor(place.normalizeSentiment())}
-                                    .stick(style='left: ' + place.normalizeSentiment() + '%;')
-                                else
-                                    .no-score
-                                        p No score available :(
-                                .tick.left
-                                .tick.mid
-                                .tick.right
-                                .expr-icon.pos
-                                    i.far.fa-smile
-                                .expr-icon.meh
-                                    i.far.fa-meh
-                                .expr-icon.neg
-                                    i.far.fa-frown
                         .field
                             .field-icon
                                 i.fas.fa-map-marker
@@ -61,9 +43,11 @@ block content
                     .reviews
                         .review
                             .info
-                                h5.ind-score #{Math.floor(review.normalizeSentiment())}
-                                p.by posted by 
-                                    a.user(href="#") #{review.by.username}
                                 p.timestamp #{review.ago()}
+                                .editor
+                                    .action.edit-review
+                                        i.fas.fa-edit
+                                    .action.delete-review(data-place=place.slug, data-review=review._id)
+                                        i.fas.fa-trash
                             .text
-                                p &#34;#{review.text}&#34;
+                                input(type="text" value=review.text)

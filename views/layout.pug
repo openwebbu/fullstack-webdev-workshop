@@ -39,25 +39,7 @@ html
                                 i.fas.fa-search
                             input#search-place-submit(type='submit', name='', value='')
                 .account
-                    if user
-                        h5 Hello,
-                        #open-menu
-                            h5.username #{user.username}
-                            .caret-icon
-                                i.fas.fa-caret-down
-                            #menu
-                                .content
-                                    a.nav-item(href='/places/new')
-                                        .nav-icon
-                                            i.fas.fa-utensils
-                                        h5.text Add a place!
-                                    a.nav-item(href='/accounts/logout')
-                                        .nav-icon
-                                            i.fas.fa-power-off
-                                        h5.text Sign out
-                    else
-                        a.nav(href="/accounts/login") Sign in
-                        h5 or
-                        a.nav(href="/accounts/register") Sign up
+                    a.nav(href='/places/new')
+                        h5.text Add a place!
         section.main
             block content

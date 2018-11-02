@@ -30,26 +30,7 @@ const Place = new Schema({
             ref: 'Review'
         }
     ],
-    sentimentScoreAvg: {
-        type: Number,
-        default: 0,
-    },
-    sentimentMagAvg: {
-        type: Number,
-        default: 0,
-    },
-    numReviews: {
-        type: Number,
-        default: 0,
-    },
 })
-
-Place.methods.normalizeSentiment = function() {
-    const [a, b] = [-1, 1]
-    const [c, d] = [0, 100]
-    const x = this.sentimentScoreAvg
-    return (x - a) * ((d - c) / (b - a)) + c
-}
 
 Place.methods.gradient = function() {
     return `linear-gradient(to left, ${this.colors.toString()})`
