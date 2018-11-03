@@ -2,20 +2,22 @@ version: '2' # specify docker-compose version
 
 # Define the services/containers to be run
 services:
-  express: #name of the second service
-    build: ./express-server # specify the directory of the Dockerfile
+  express: 
+    build: express-server # specify the directory of the Dockerfile
     ports:
-      - "3000:3000" #specify ports forewarding
+      - "3000:3000" # Specify ports forwarding.
     links:
-      - database # link this service to the database service
+      - database # Link to database service.
+    # Mount volume from host OS for nodemon to properly read files.
     volumes:
-      - ./express-server:/usr/src/app
+      - ./express-server:/usr/app # Not sure why but this has to use "./" relative path
 
-  database: # name of the third service
-    image: mongo # specify image to build container from
+  database: 
+    image: mongo # Specify to use mongo from DockerHub.
     ports:
-      - "27017:27017" # specify port forewarding
+      - "27017:27017" # Specify port forwarding.
   
+  # Service for seeding database with initial places data.
   mongo-seed:
     build: mongo-seed
     links:
