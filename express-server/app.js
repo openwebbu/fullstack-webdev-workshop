@@ -9,8 +9,9 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-mongoose.connect(process.env.DB_HOST, { useNewUrlParser: true })
+mongoose.connect('mongodb://database/open-reviews', { useNewUrlParser: true })
 
+console.log()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')

@@ -1,0 +1,411 @@
+[
+    {
+      "_id": {
+        "$oid": "5bdc9515bbd9be17387e0425"
+      },
+      "colors": [
+        "#F7971E",
+        "#FFD200"
+      ],
+      "reviews": [
+        {
+          "$oid": "5bddd7d9eaddeb1a1b4e9de1"
+        },
+        {
+          "$oid": "5bddd7e1eaddeb1a1b4e9de3"
+        }
+      ],
+      "name": "Boston University",
+      "address": "Boston, MA 02215",
+      "phone": "(617) 353-2000",
+      "website": "https://www.bu.edu/",
+      "description": "Boston University is a private, non-profit, research university in Boston, Massachusetts. The university is nonsectarian, but has been historically affiliated with the United Methodist Church. The university has more than 3,900 faculty members and nearly 33,000 students, and is one of Boston's largest employers.",
+      "created": {
+        "$date": "2018-11-02T14:19:01.394-0400"
+      },
+      "slug": "boston-university",
+      "__v": 2
+    },
+    {
+      "_id": {
+        "$oid": "5bdc954bbbd9be17387e0426"
+      },
+      "colors": [
+        "#11998e",
+        "#38ef7d"
+      ],
+      "reviews": [],
+      "name": "Boston College",
+      "address": "Chestnut Hill, MA 02467",
+      "phone": "(617) 552-8000",
+      "website": "https://www.bc.edu/",
+      "description": "Boston College is a private Jesuit Catholic research university located in the affluent village of Chestnut Hill, Massachusetts, United States, 6 miles west of Boston. The university has more than 9,300 full-time undergraduates and nearly 5,000 graduate students.",
+      "created": {
+        "$date": "2018-11-02T14:19:55.698-0400"
+      },
+      "slug": "boston-college",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc956ebbd9be17387e0427"
+      },
+      "colors": [
+        "#ff6e7f",
+        "#bfe9ff"
+      ],
+      "reviews": [],
+      "name": "Northeastern University",
+      "address": "360 Huntington Ave, Boston, MA 02115",
+      "phone": "(617) 373-2000",
+      "website": "https://www.northeastern.edu/",
+      "description": "Northeastern University is a private research university in Boston, Massachusetts, established in 1898. It is categorized as an R1 institution by the Carnegie Classification of Institutions of Higher Education.",
+      "created": {
+        "$date": "2018-11-02T14:20:30.029-0400"
+      },
+      "slug": "northeastern-university",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc959bbbd9be17387e0428"
+      },
+      "colors": [
+        "#00F260",
+        "#0575E6"
+      ],
+      "reviews": [],
+      "name": "Museum of Fine Arts, Boston",
+      "address": "465 Huntington Ave, Boston, MA 02115",
+      "phone": "",
+      "website": "https://www.mfa.org/",
+      "description": "The Museum of Fine Arts in Boston, Massachusetts, is the fifth largest museum in the United States. It contains more than 450,000 works of art, making it one of the most comprehensive collections in the Americas.",
+      "created": {
+        "$date": "2018-11-02T14:21:15.869-0400"
+      },
+      "slug": "museum-of-fine-arts,-boston",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc95d1bbd9be17387e0429"
+      },
+      "colors": [
+        "#FDFC47",
+        "#24FE41"
+      ],
+      "reviews": [],
+      "name": "Harvard University",
+      "address": "Cambridge, MA 02138",
+      "phone": "(617) 495-1000",
+      "website": "https://www.harvard.edu/",
+      "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts, with about 6,700 undergraduate students and about 15,250 post graduate students.",
+      "created": {
+        "$date": "2018-11-02T14:22:09.174-0400"
+      },
+      "slug": "harvard-university",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc95eebbd9be17387e042a"
+      },
+      "colors": [
+        "#7F00FF",
+        "#E100FF"
+      ],
+      "reviews": [],
+      "name": "University of Massachusetts Boston",
+      "address": "100 William T, Morrissey Blvd, Boston, MA 02125",
+      "phone": "(617) 287-5000",
+      "website": "https://www.umb.edu/",
+      "description": "The University of Massachusetts Boston, also known as UMass Boston, is an urban public research university and the third-largest campus in the five-campus University of Massachusetts system. The university is on 120 acres on the Columbia Point peninsula in the city of Boston, Massachusetts, United States.",
+      "created": {
+        "$date": "2018-11-02T14:22:38.131-0400"
+      },
+      "slug": "university-of-massachusetts-boston",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc9606bbd9be17387e042b"
+      },
+      "colors": [
+        "#B3FFAB",
+        "#12FFF7"
+      ],
+      "reviews": [],
+      "name": "Massachusetts General Hospital",
+      "address": "55 Fruit St, Boston, MA 02114",
+      "phone": "",
+      "website": "https://www.massgeneral.org/",
+      "description": "Massachusetts General Hospital is the original and largest teaching hospital of Harvard Medical School and a biomedical research facility located in the West End neighborhood of Boston, Massachusetts. It is the third oldest general hospital in the United States.",
+      "created": {
+        "$date": "2018-11-02T14:23:02.292-0400"
+      },
+      "slug": "massachusetts-general-hospital",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc965dbbd9be17387e042c"
+      },
+      "colors": [
+        "#0575E6",
+        "#021B79"
+      ],
+      "reviews": [],
+      "name": "Fenway Park",
+      "address": "4 Yawkey Way, Boston, MA 02215",
+      "phone": "",
+      "website": "https://www.mlb.com/redsox/ballpark",
+      "description": "Fenway Park is a baseball park located in Boston, Massachusetts near Kenmore Square. Since 1912, it has been the home for the Boston Red Sox, the city's American League baseball team, and since 1953, its only Major League Baseball franchise. It is the oldest ballpark in Major League Baseball. ",
+      "created": {
+        "$date": "2018-11-02T14:24:29.048-0400"
+      },
+      "slug": "fenway-park",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc967bbbd9be17387e042d"
+      },
+      "colors": [
+        "#F1F2B5",
+        "#135058"
+      ],
+      "reviews": [],
+      "name": "Faneuil Hall Marketplace",
+      "address": "4 S Market St, Boston, MA 02109",
+      "phone": "(617) 523-1300",
+      "website": "https://faneuilhallmarketplace.com/",
+      "description": "Shopping center with many stores & restaurants comprising 3 historic market buildings & a promenade.",
+      "created": {
+        "$date": "2018-11-02T14:24:59.115-0400"
+      },
+      "slug": "faneuil-hall-marketplace",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc969dbbd9be17387e042e"
+      },
+      "colors": [
+        "#215f00",
+        "#e4e4d9"
+      ],
+      "reviews": [],
+      "name": "Boston Common",
+      "address": "139 Tremont St, Boston, MA 02111",
+      "phone": "(617) 635-4505",
+      "website": "https://www.boston.gov/parks/boston-common",
+      "description": "Boston Common is a central public park in downtown Boston, Massachusetts. It is sometimes erroneously referred to as the Boston Commons. Dating from 1634, it is the oldest city park in the United States.",
+      "created": {
+        "$date": "2018-11-02T14:25:33.828-0400"
+      },
+      "slug": "boston-common",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc96c0bbd9be17387e042f"
+      },
+      "colors": [
+        "#403B4A",
+        "#E7E9BB"
+      ],
+      "reviews": [],
+      "name": "Boston Public Garden",
+      "address": "4 Charles St, Boston, MA 02116",
+      "phone": "(617) 635-4505",
+      "website": "https://www.boston.gov/parks/public-garden",
+      "description": "The Public Garden, also known as Boston Public Garden, is a large park in the heart of Boston, Massachusetts, adjacent to Boston Common.",
+      "created": {
+        "$date": "2018-11-02T14:26:08.773-0400"
+      },
+      "slug": "boston-public-garden",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc96dcbbd9be17387e0430"
+      },
+      "colors": [
+        "#ffb347",
+        "#ffcc33"
+      ],
+      "reviews": [],
+      "name": "New England Aquarium",
+      "address": "1 Central Wharf, Boston, MA 02110",
+      "phone": "",
+      "website": "https://www.neaq.org/",
+      "description": "The New England Aquarium is an aquarium located in Boston, Massachusetts. In addition to the main aquarium building, attractions at the New England Aquarium include the Simons IMAX Theatre and the New England Aquarium Whale Watch, which operates from April through November.",
+      "created": {
+        "$date": "2018-11-02T14:26:36.983-0400"
+      },
+      "slug": "new-england-aquarium",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc96f9bbd9be17387e0431"
+      },
+      "colors": [
+        "#cb2d3e",
+        "#ef473a"
+      ],
+      "reviews": [],
+      "name": "North End",
+      "address": "02109, 02110, 02113",
+      "phone": "",
+      "website": "www.northendboston.com/",
+      "description": "The North End, Boston’s Little Italy, is a maze of narrow streets with some of the city’s oldest buildings. On the self-guided Freedom Trail, tourists pass historic sites like the 1680 Paul Revere House and the Old North Church, which played a key role at the beginning of the Revolutionary War. Italian restaurants, coffeehouses, pastry shops and old-school delis pack the area, especially on lively Hanover Street.",
+      "created": {
+        "$date": "2018-11-02T14:27:05.035-0400"
+      },
+      "slug": "north-end",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc9718bbd9be17387e0432"
+      },
+      "colors": [
+        "#cb2d3e",
+        "#ef473a"
+      ],
+      "reviews": [],
+      "name": "Freedom Trail",
+      "address": "",
+      "phone": "",
+      "website": "https://www.thefreedomtrail.org/",
+      "description": "The Freedom Trail is a 2.5-mile-long path through downtown Boston, Massachusetts, that passes by 16 locations significant to the history of the United States. Marked largely with brick, it winds between Boston Common to the Bunker Hill Monument in Charlestown.",
+      "created": {
+        "$date": "2018-11-02T14:27:36.890-0400"
+      },
+      "slug": "freedom-trail",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc973ebbd9be17387e0433"
+      },
+      "colors": [
+        "#BE93C5",
+        "#7BC6CC"
+      ],
+      "reviews": [],
+      "name": "Massachusetts Institute of Technology",
+      "address": "77 Massachusetts Ave, Cambridge, MA 02139",
+      "phone": "(617) 253-1000",
+      "website": "www.mit.edu/",
+      "description": "The Massachusetts Institute of Technology is a private research university located in Cambridge, Massachusetts, United States.",
+      "created": {
+        "$date": "2018-11-02T14:28:14.208-0400"
+      },
+      "slug": "massachusetts-institute-of-technology",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc975cbbd9be17387e0434"
+      },
+      "colors": [
+        "#070000",
+        "#4C0001",
+        "#070000"
+      ],
+      "reviews": [],
+      "name": "Stanford University",
+      "address": " 450 Serra Mall, Stanford, CA 94305",
+      "phone": "(650) 723-2300",
+      "website": "https://www.stanford.edu/",
+      "description": "Stanford University is a private research university in Stanford, California. Stanford is known for its academic strength, wealth, proximity to Silicon Valley, and ranking as one of the world's top universities.",
+      "created": {
+        "$date": "2018-11-02T14:28:44.054-0400"
+      },
+      "slug": "stanford-university",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc977ebbd9be17387e0435"
+      },
+      "colors": [
+        "#6a3093",
+        "#a044ff"
+      ],
+      "reviews": [],
+      "name": "Yale University",
+      "address": "New Haven, CT 06520",
+      "phone": "(203) 432-4771",
+      "website": "https://www.yale.edu/",
+      "description": "Yale University is an American private Ivy League research university in New Haven, Connecticut. Founded in 1701, it is the third-oldest institution of higher education in the United States and one of the nine Colonial Colleges chartered before the American Revolution.",
+      "created": {
+        "$date": "2018-11-02T14:29:18.548-0400"
+      },
+      "slug": "yale-university",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc97efbbd9be17387e0436"
+      },
+      "colors": [
+        "#2b5876",
+        "#4e4376"
+      ],
+      "reviews": [],
+      "name": "California Institute of Technology",
+      "address": "1200 E California Blvd, Pasadena, CA 91125",
+      "phone": "(626) 395-6811",
+      "website": "www.caltech.edu/",
+      "description": "The California Institute of Technology is a private doctorate-granting research university located in Pasadena, California, United States. Known for its strength in natural science and engineering, Caltech is often ranked as one of the world's top-ten universities.",
+      "created": {
+        "$date": "2018-11-02T14:31:11.983-0400"
+      },
+      "slug": "california-institute-of-technology",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc980cbbd9be17387e0437"
+      },
+      "colors": [
+        "#283c86",
+        "#45a247"
+      ],
+      "reviews": [],
+      "name": "Cornell University",
+      "address": "Ithaca, NY 14850",
+      "phone": "",
+      "website": "(607) 254-4636",
+      "description": "Cornell University is a private and statutory Ivy League research university located in Ithaca, New York.",
+      "created": {
+        "$date": "2018-11-02T14:31:40.154-0400"
+      },
+      "slug": "cornell-university",
+      "__v": 0
+    },
+    {
+      "_id": {
+        "$oid": "5bdc9829bbd9be17387e0438"
+      },
+      "colors": [
+        "#BBD2C5",
+        "#536976",
+        "#292E49"
+      ],
+      "reviews": [],
+      "name": "University of California, Berkeley",
+      "address": "Berkeley, CA",
+      "phone": "(510) 642-6000",
+      "website": "https://www.berkeley.edu/",
+      "description": "The University of California, Berkeley is a top-ranked public research university in the United States. Located in the city of Berkeley, it was founded in 1868, and serves as the flagship institution of the ten research universities affiliated with the University of California system.",
+      "created": {
+        "$date": "2018-11-02T14:32:09.836-0400"
+      },
+      "slug": "university-of-california,-berkeley",
+      "__v": 0
+    }
+  ]

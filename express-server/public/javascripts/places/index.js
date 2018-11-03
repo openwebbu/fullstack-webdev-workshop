@@ -7,8 +7,7 @@ connectDeletes = function() {
     const reviews = document.getElementsByClassName('delete-review')
     for (let review of reviews) {
         review.addEventListener('click', function() {
-            // deleteReview(review.dataset.place, review.dataset.review)
-            console.log('paynus')
+            deleteReview(review.dataset.place, review.dataset.review)
         })
     }
 }
